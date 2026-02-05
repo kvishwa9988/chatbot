@@ -3,7 +3,7 @@ from backend.controller import router
 from fastapi.middleware.cors import CORSMiddleware
 origins = [
     "http://localhost:8501",           # Allows your local testing
-    "https://chatbot-ne9r7zpogdjjrk9zgdfvya.streamlit.app/", # Replace with your REAL Streamlit URL
+    "https://chatbot-ne9r7zpogdjjrk9zgdfvya.streamlit.app", # Replace with your REAL Streamlit URL
 ]
 
 
@@ -21,5 +21,6 @@ app.add_middleware(
 @app.get("/")
 async def root():
     return {"status": "Backend is running. Visit /docs for API testing."}
+
 
 
