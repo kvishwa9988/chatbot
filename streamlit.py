@@ -32,7 +32,7 @@ if prompt := st.chat_input("Ask.."):
                 "message": prompt,
                 "session_id": st.session_state.session_id
             }
-            response = requests.post("https://chatbot-1-6wzd.onrender.com/", json=payload)
+            response = requests.post("https://chatbot-1-6wzd.onrender.com", json=payload)
             
             if response.status_code == 200:
                 bot_response = response.json()["output"]
@@ -46,3 +46,4 @@ if prompt := st.chat_input("Ask.."):
         except Exception as e:
 
             st.error(f"Failed to connect to backend: {e}")
+
